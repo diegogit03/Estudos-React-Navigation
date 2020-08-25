@@ -1,8 +1,8 @@
 import React from 'react';
-import Principal from './src/App';
+import Navegacao from './src/navegacao';
 
 export default function App() {
   return (
-    <Principal/>
+    <Navegacao/>
   );
 }
