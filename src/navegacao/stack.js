@@ -5,6 +5,8 @@ import TelaA from '../views/TelaA';
 import TelaB from '../views/TelaB';
 import TelaC from '../views/TelaC';
 
+import PassoStack from '../components/PassoStack';
+
 const Stack = createStackNavigator();
 
 export default props => (
@@ -15,13 +17,23 @@ export default props => (
         <Stack.Screen 
         	name="TelaA"
         	options={{ title: 'Cabeçaho da tela A' }}
-        	component={TelaA}
-        />
+        >
+            {props => (
+                <PassoStack {...props} avancar="TelaB">
+                    <TelaA/>
+                </PassoStack>
+            )}
+        </Stack.Screen>
         <Stack.Screen 
         	name="TelaB"
         	options={{ title: 'Cabeçaho da tela B' }}
-        	component={TelaB}
-        />
+        >
+            {props => (
+                <PassoStack {...props} avancar="TelaC">
+                    <TelaB/>
+                </PassoStack>
+            )}
+        </Stack.Screen>
         <Stack.Screen 
         	name="TelaC" 
         	options={{ title: 'Cabeçaho da tela C' }}
