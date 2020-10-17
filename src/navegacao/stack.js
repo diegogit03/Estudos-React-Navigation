@@ -39,7 +39,7 @@ export default props => (
         	options={{ title: 'Cabeçaho da tela C' }}
         >
         {props => (
-            <PassoStack {...props} voltar="TelaB">
+            <PassoStack {...props} usePush voltar avancar="TelaC">
                 <TelaC/>
             </PassoStack>
         )}
