@@ -19,7 +19,12 @@ export default props => {
                             title="Avançar"
                             onPress={() => {
                                 props.usePush
-                                    ? props.navigation.push(props.avancar)
+                                    ? props.navigation.push(
+                                        props.avancar,
+                                        {
+                                            numero: parseInt(Math.random() * 100)
+                                        }
+                                       )
                                     : props.navigation.navigate(props.avancar)
                             }}
                         />

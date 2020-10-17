@@ -12,11 +12,11 @@ const Stack = createStackNavigator();
 export default props => (
     <Stack.Navigator 
     	initalRouteName="TelaA"
-    	screenOptions={{ headerShown: false }}
+    	screenOptions={{ headerShown: true }}
     >
         <Stack.Screen 
         	name="TelaA"
-        	options={{ title: 'Cabeçaho da tela A' }}
+        	options={{ title: 'Cabeçalho da tela A' }}
         >
             {props => (
                 <PassoStack {...props} avancar="TelaB">
@@ -26,21 +26,21 @@ export default props => (
         </Stack.Screen>
         <Stack.Screen 
         	name="TelaB"
-        	options={{ title: 'Cabeçaho da tela B' }}
+        	options={{ title: 'Cabeçalho da tela B' }}
         >
             {props => (
-                <PassoStack {...props} voltar="TelaA" avancar="TelaC">
+                <PassoStack {...props} usePush voltar="TelaA" avancar="TelaC">
                     <TelaB/>
                 </PassoStack>
             )}
         </Stack.Screen>
         <Stack.Screen 
         	name="TelaC" 
-        	options={{ title: 'Cabeçaho da tela C' }}
+        	options={{ title: 'Cabeçalho da tela C' }}
         >
         {props => (
             <PassoStack {...props} usePush voltar avancar="TelaC">
-                <TelaC/>
+                <TelaC {...props}/>
             </PassoStack>
         )}
         </Stack.Screen>
